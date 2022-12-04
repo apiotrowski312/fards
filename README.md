@@ -6,7 +6,7 @@
 
 This is a *Flash Cards* aka **Fards**. It provides all basic functions you could need from a flash card app. 
 
-Yeah, I am not the best with names :wink:
+Yeah, I am not the best with names :stuck_out_tongue_winking_eye:
 
 ## Attributions
 
