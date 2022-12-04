@@ -21,7 +21,7 @@ jobs:
         with:
           go-version: '1.18'
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -50,7 +50,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
-          git commit -m "chore: Updated coverage badge."
+          git commit -m "[skip ci] Updated coverage badge."
 
       - name: Push changes
         if: steps.verify-changed-files.outputs.files_changed == 'true'
