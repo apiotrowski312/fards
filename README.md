@@ -3,7 +3,6 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/apiotrowski312/fards)
 [![Go Report Card](https://goreportcard.com/badge/github.com/apiotrowski312/fards)](https://goreportcard.com/report/github.com/apiotrowski312/fards)
 
-
 # Fards
 
 <picture>
