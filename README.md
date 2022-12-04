@@ -15,6 +15,28 @@ This is a *Flash Cards* aka **Fards**. It provides all basic functions you could
 
 Yeah, I am not the best with names :stuck_out_tongue_winking_eye:
 
+## Installation and usage:
+
+You need to have installed on your computer:
+
+- [Go (Golang)](https://go.dev/)
+For android installation:
+- [Fyne](https://fyne.io/) 
+- 
+
+You can run app on linux with command:
+
+```
+go run main.go
+```
+
+For android devices you can run those commands ([Full tutorial on Fyne docs](https://developer.fyne.io/started/mobile.html)):
+
+```
+fyne package -os android/arm .
+adb install Fards.ap
+```
+
 ## Attributions
 
 - [Fart icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/fart)
