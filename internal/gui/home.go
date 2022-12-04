@@ -22,7 +22,13 @@ type home struct {
 	storage fyne.Storage
 }
 
-func NewHome(decksStore decksStore, categoriesStore categoriesStore, router router, canvas fyne.Canvas, storage fyne.Storage) *home {
+func NewHome(
+	decksStore decksStore,
+	categoriesStore categoriesStore,
+	router router,
+	canvas fyne.Canvas,
+	storage fyne.Storage,
+) *home {
 	return &home{
 		decksStore:      decksStore,
 		categoriesStore: categoriesStore,
@@ -81,7 +87,11 @@ func (h home) list() fyne.CanvasObject {
 	return listOfDecks
 }
 
-func (h home) categoryLabelRow(category models.Category, deckRowsContainer, parentContainer *fyne.Container) *fyne.Container {
+func (h home) categoryLabelRow(
+	category models.Category,
+	deckRowsContainer,
+	parentContainer *fyne.Container,
+) *fyne.Container {
 	foldBtn := widget.NewButtonWithIcon("", theme.MenuDropDownIcon(), nil)
 	foldBtn.OnTapped = func() {
 		if deckRowsContainer.Hidden {

@@ -17,6 +17,7 @@ type screenRouter struct {
 	current *fyne.Container
 	history []fyne.CanvasObject
 	layouts []Layoutable
+	popup   *fyne.Container
 
 	canvas fyne.Canvas
 }
@@ -27,20 +28,19 @@ func NewScreenRouter(canvas fyne.Canvas) *screenRouter {
 		current: container.NewMax(widget.NewLabel("It should not be visible"), popup),
 
 		layouts: []Layoutable{},
+		popup:   popup,
 
 		canvas: canvas,
 	}
 }
 
 func (s *screenRouter) CleanPopup() {
-	popup := s.current.Objects[1].(*fyne.Container)
-	popup.RemoveAll()
+	s.popup.RemoveAll()
 }
 
 func (s *screenRouter) SetPopup(content fyne.CanvasObject) {
 	modal := widget.NewModalPopUp(content, s.canvas)
-	popup := s.current.Objects[1].(*fyne.Container)
-	popup.Add(modal)
+	s.popup.Add(modal)
 }
 
 func (s *screenRouter) Reset(newMain Layoutable) *screenRouter {
@@ -63,7 +63,6 @@ func (s *screenRouter) Pop() {
 
 	s.history = s.history[:lastIndex]
 	s.layouts = s.layouts[:lastIndex+1]
-
 }
 
 func (s *screenRouter) Push(screen Layoutable) {

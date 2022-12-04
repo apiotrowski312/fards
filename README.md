@@ -1,4 +1,5 @@
 ![Coverage](https://img.shields.io/badge/Coverage-66.4%25-yellow)
+[![Lint](https://github.com/apiotrowski312/fards/actions/workflows/lint.yml/badge.svg)](https://github.com/apiotrowski312/fards/actions/workflows/lint.yml)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/apiotrowski312/fards)
 [![Go Report Card](https://goreportcard.com/badge/github.com/apiotrowski312/fards)](https://goreportcard.com/report/github.com/apiotrowski312/fards)
 

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 
 	"fyne.io/fyne/v2"
 	"github.com/apiotrowski312/fards/internal/models"
@@ -27,8 +28,9 @@ func NewCategory(storage fyne.Storage) *categoryStore {
 		storage: storage,
 	}
 
-	// FIXME: Do not ignore error
-	categoryStore.load()
+	if err := categoryStore.load(); err != nil {
+		log.Printf("could not load: %v", err)
+	}
 
 	return categoryStore
 }

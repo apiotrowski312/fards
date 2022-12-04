@@ -1,7 +1,6 @@
 package gui
 
 import (
-	"errors"
 	"log"
 	"sort"
 
@@ -10,8 +9,6 @@ import (
 	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 )
-
-const categoryMinLength = 4
 
 type category struct {
 	categoriesStore categoriesStore
@@ -126,11 +123,4 @@ func (c category) bottom() *fyne.Container {
 		c.router.Reload()
 	})
 	return container.NewBorder(nil, nil, returnBtn, nil, container.NewMax())
-}
-
-func categoryNameValidator(s string) error {
-	if len(s) < categoryMinLength {
-		return errors.New("too short")
-	}
-	return nil
 }

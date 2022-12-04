@@ -3,6 +3,7 @@ package store
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"math/rand"
 	"time"
 
@@ -27,7 +28,9 @@ func NewCards(storage fyne.Storage, fileName string) *cardsStore {
 		index: 0,
 	}
 
-	cardsStore.load()
+	if err := cardsStore.load(); err != nil {
+		log.Printf("could not load: %v", err)
+	}
 
 	if len(cardsStore.cards) == 0 {
 		cardsStore.cards = [][2]string{{}}
@@ -76,23 +79,31 @@ func (s *cardsStore) Shuffle() {
 func (s *cardsStore) Update(front, back string) {
 	s.cards[s.index] = [2]string{front, back}
 
-	s.save()
+	if err := s.save(); err != nil {
+		log.Printf("could not save: %v", err)
+	}
 }
 
 func (s *cardsStore) Add(front, back string) {
 	s.cards = append(s.cards, [2]string{front, back})
 
-	s.save()
+	if err := s.save(); err != nil {
+		log.Printf("could not save: %v", err)
+	}
 }
 
 func (s *cardsStore) RemoveCurrentCard() {
 	if s.index == 0 && len(s.cards) > 0 {
 		s.cards = [][2]string{{}}
-		s.save()
+		if err := s.save(); err != nil {
+			log.Printf("could not save: %v", err)
+		}
 		return
 	}
 	s.cards = append(s.cards[:s.index], s.cards[s.index+1:]...)
-	s.save()
+	if err := s.save(); err != nil {
+		log.Printf("could not save: %v", err)
+	}
 	s.index--
 }
 

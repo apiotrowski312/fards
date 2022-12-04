@@ -24,8 +24,9 @@ func NewDecks(storage fyne.Storage) *decksStore {
 		storage: storage,
 	}
 
-	// FIXME: Do not ignore error
-	listStore.load()
+	if err := listStore.load(); err != nil {
+		log.Printf("could not load: %v", err)
+	}
 
 	return listStore
 }
