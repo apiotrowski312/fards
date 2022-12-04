@@ -1,0 +1,8 @@
+Website = "https://github.com/apiotrowski312/fards"
+
+[Details]
+  Icon = "assets/icon.png"
+  Name = "Fards"
+  ID = "io.apiotrowski312.fards"
+  Version = "0.0.1"
+  Build = 35
