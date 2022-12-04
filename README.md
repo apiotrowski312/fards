@@ -11,26 +11,24 @@
   <img alt="fards icon" src="assets/icon.png" width="100">
 </picture>
 
-This is a *Flash Cards* aka **Fards**. It provides all basic functions you could need from a flash card app. 
+This app is called *Flash Cards* aka **Fards**. It provides all basic functions you could need from a flash card app. 
 
 Yeah, I am not the best with names :stuck_out_tongue_winking_eye:
 
 ## Installation and usage:
 
-You need to have installed on your computer:
-
+You need to have those two installed on your computer:
 - [Go (Golang)](https://go.dev/)
 For android installation:
 - [Fyne](https://fyne.io/) 
-- 
 
-You can run app on linux with command:
+You can run it on desktop with:
 
 ```
 go run main.go
 ```
 
-For android devices you can run those commands ([Full tutorial on Fyne docs](https://developer.fyne.io/started/mobile.html)):
+For android devices you need to run these commands ([Full tutorial on Fyne docs](https://developer.fyne.io/started/mobile.html)):
 
 ```
 fyne package -os android/arm .
